@@ -1,6 +1,5 @@
 package battleship;
 
-//왜 안되냐고 시발
 
 import java.lang.reflect.Array;
 import java.util.*;
