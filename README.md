@@ -3,7 +3,7 @@
 ## Basic Info
 - Program language : Java
 - Start Date: May 21, 2024
-- End Date: ...ing
+- End Date: (...ing)
 
 ## Completed
 - Created Player vs. Player mode
@@ -12,5 +12,6 @@
 ## Need to work on
 - Prevent users from placing ships right beside ships
 - Improve of Ai
+- Multi-players
 - ***IMPORT GRAPHICS***
 - Efficiency of codes 
