@@ -307,37 +307,32 @@ public class Methods {
 				
 				if (CheckLayered(row, col, placement, boats[i], array) == true) { //BOOLEAN - to check if there is any boats layered
 					Layer = "YES"; //change variable to "YES"
-					break; //break loop to reset 
-				} //end if
-				
-				array = placed(row, col, placement, boats[i], array); //METHOD - placing ships in the coordinate given for the correct placement
-				
+					System.out.println(); //spacing
+					textWriter("This placement is not allowed due to layering.", 10);
+					textWriter("Placement canceled.", 10);
+					System.out.println(); //spacing
+					i = i - 1;
+				} else {
+					array = placed(row, col, placement, boats[i], array); //METHOD - placing ships in the coordinate given for the correct placement	
+				} //end if	
 			} //end for loop - until all the boats are placed
-
-			
-			if (Layer.equalsIgnoreCase("YES")) { //if there is any boats layered
-				System.out.println(); //spacing
-				textWriter("The battleships are layered. Reset is required.", 10);
-				textWriter("Please place ships without getting layered.", 10);
-				System.out.println();
-				RESET = "YES"; //reset is required
-			} else { //no layers
-				System.out.println();
-				textWriter("This is your board after all the placements:", 10);
-				print(array); //show final appearance of board after all placements
 				
-				do { //loop until get input of either YES or NO		
-					System.out.println();
-					textWriter("Want to reset the board? (Yes/No): ", 10);
-					RESET = myInput.next(); //collect STRING
-					if (RESET.equalsIgnoreCase("YES") || RESET.equalsIgnoreCase("NO")) { 
-						break; //if right input, break loop
-					} else { //if not right, 
-						textWriter("Please type \"YES\" or \"NO\".", 10);
-						continue; //continue loop
-					} //end if & else
-				} while(true); //end do while loop
-			} //end if & else
+			System.out.println();
+			textWriter("This is your board after all the placements:", 10);
+			print(array); //show final appearance of board after all placements
+			
+			do { //loop until get input of either YES or NO		
+				System.out.println();
+				textWriter("Want to reset the board? (Yes/No): ", 10);
+				RESET = myInput.next(); //collect STRING
+				if (RESET.equalsIgnoreCase("YES") || RESET.equalsIgnoreCase("NO")) { 
+					break; //if right input, break loop
+				} else { //if not right, 
+					textWriter("Please type \"YES\" or \"NO\".", 10);
+					continue; //continue loop
+				} //end if & else
+			} while(true); //end do while loop
+			//} //end if & else
 
 		} while(RESET.equalsIgnoreCase("YES")); //end RESET loop
 
